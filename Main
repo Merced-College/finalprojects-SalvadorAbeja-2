@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Menu menu = new Menu();
+        OrderCart cart = new OrderCart();
+
+        // Load CSV (Ensure menu.csv exists in your project root)
+        menu.loadFromCSV("menu.csv");
+        
+        boolean running = true;
+        while (running) {
+            System.out.println("1. View Menu (By Price)\n2. Search/Add Item by ID\n3. Checkout\n4. Exit");
+            System.out.print("Choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    menu.sortByPrice();
+                    menu.display();
+                    break;
+                case 2:
+                    System.out.print("Enter ID: ");
+                    MenuItem item = menu.findById(scanner.nextInt());
+                    if (item != null) cart.addItem(item);
+                    else System.out.println("Item not found!");
+                    break;
+                case 3:
+                    new CustomerOrder(cart).finalizeOrder();
+                    running = false;
+                    break;
+                case 4:
+                    running = false;
+                    break;
+            }
+        }
+        scanner.close();
+    }
+}
