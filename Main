@@ -14,8 +14,9 @@ public class Main {
             System.out.println("\n--- Restaurant Ordering System ---");
             System.out.println("1. View Full Menu (By Price)");
             System.out.println("2. Add Item by Item ID (Search)");
-            System.out.println("3. View Cart & Checkout");
-            System.out.println("4. Exit");
+            System.out.println("3. Add Item by Name (Linear Search)");
+            System.out.println("4. View Cart & Checkout");
+            System.out.println("5. Exit");
             System.out.println("Selection: ");
             
             int choice = scanner.nextInt();
@@ -31,11 +32,19 @@ public class Main {
                     if (item != null) cart.addItem(item);
                     else System.out.println("Item not found!");
                     break;
-                case 3:
-                    new CustomerOrder(cart).finalizeOrder();
-                    running = false;
+                case 3: 
+                    System.out.print("Enter the Item Name (ex. Hamburger or Spaghetti)");
+                    String name = scanner.nextLine();
+                    MenuItem itemName = menu.findByName(name);
+                    if (itemName != null){
+                        System.out.println("Item name not found. Check your spelling!");
+                    }
                     break;
                 case 4:
+                    new;
+                    running = false;
+                    break;
+                case 5:
                     running = false;
                     break;
             }
