@@ -1,13 +1,13 @@
-javaimport java.util.ArrayList;
+import java.util.ArrayList;
 import java.io.File;
-import java.util.scanner
+import java.util.Scanner;
 
 public class Menu{
     private ArrayList<MenuItem> items = new ArrayList<>();
 
     public void loadFromCSV(String filename){
         try {
-            File file = file(filename);
+            File file = new File(filename);
             Scanner fileScanner = new Scanner(file);
 
             //Skips header row "menu_item_id,item_name,category,price"
@@ -17,7 +17,7 @@ public class Menu{
 
             while (fileScanner .hasNextLine()){
                 String line = fileScanner.nextLine();
-                if (line.trim().isEmpty()).continue;
+                if (line.trim().isEmpty()) continue;
 
                 String[] parts = line.split(",");
                 if (parts.length == 4){
@@ -53,7 +53,7 @@ public class Menu{
         for ( int i = 1; i < items.size(); i++){
             MenuItem key = items.get(i);
             int j = i - 1;
-            while (j >= 0 && items.get(j).getID() > key.getID()){
+            while (j >= 0 && items.get(j).getId() > key.getId()){
                 items.set(j + 1, items.get(j));
                 j--;
             }
@@ -68,7 +68,7 @@ public class Menu{
         int high = items.size() - 1;
         while (low <= high) {
             int mid = (low + high) / 2;
-            if (items.get(mid).getId() == tagrteId) return items.get(mid);
+            if (items.get(mid).getId() == targetId) return items.get(mid);
             if (items.get(mid).getId() < targetId) low = mid + 1;
             else high = mid - 1;
         }
@@ -78,15 +78,16 @@ public class Menu{
     //Linear Search (By Name)
     public MenuItem findByName(String targetName){
         for (MenuItem item : items){
-            if(item.getName(),equalsIgnoreCase(targetName.trim())){
+            if(item.getName().equalsIgnoreCase(targetName.trim())){
                 return item;
             }
         }
+        return null;
     }
 
     public void display(){
-        System.out.printf("%-8s | %-20s | %-12s | %-7s\n", "ID", "Name", "Category", "Price")
-        Systen.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.printf("%-8s | %-20s | %-12s | %-7s\n", "ID", "Name", "Category", "Price");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         for (MenuItem item : items) System.out.println(item);
     }
 }

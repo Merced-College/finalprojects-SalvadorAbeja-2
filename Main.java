@@ -38,13 +38,14 @@ public class Main {
                     MenuItem itemName = menu.findByName(name);
                     if (itemName != null){
                         cart.addItem(itemName);
+                    }
                     else {
                         System.out.println("Item name not found. Check your spelling!");
                     }
                     break;
                 case 4:
                     CustomerOrder order = new CustomerOrder(cart);
-                    order.finializeOrder();
+                    order.finalizeOrder();
                     running = false;
                     break;
                 case 5:
