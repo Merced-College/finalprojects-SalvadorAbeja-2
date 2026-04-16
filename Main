@@ -33,15 +33,18 @@ public class Main {
                     else System.out.println("Item not found!");
                     break;
                 case 3: 
-                    System.out.print("Enter the Item Name (ex. Hamburger or Spaghetti)");
+                    System.out.print("Enter the Item Name: ");
                     String name = scanner.nextLine();
                     MenuItem itemName = menu.findByName(name);
                     if (itemName != null){
+                        cart.addItem(itemName);
+                    else {
                         System.out.println("Item name not found. Check your spelling!");
                     }
                     break;
                 case 4:
-                    new;
+                    CustomerOrder order = new CustomerOrder(cart);
+                    order.finializeOrder();
                     running = false;
                     break;
                 case 5:
