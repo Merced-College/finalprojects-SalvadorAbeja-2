@@ -17,7 +17,7 @@ public class Main {
             System.out.println("3. Add Item by Name (Linear Search)");
             System.out.println("4. View Cart & Checkout");
             System.out.println("5. Exit");
-            System.out.println("Selection: ");
+            System.out.print("Selection: ");
             
             int choice = scanner.nextInt();
 
