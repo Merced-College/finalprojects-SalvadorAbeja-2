@@ -7,7 +7,7 @@ public class Main {
         OrderCart cart = new OrderCart();
 
         // Load menu.csv
-        menu.loadFromCSV("menu(menu_items).csv");
+        menu.loadFromCSV("menu.csv");
         
         boolean running = true;
         while (running) {
@@ -20,6 +20,7 @@ public class Main {
             System.out.print("Selection: ");
             
             int choice = scanner.nextInt();
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
