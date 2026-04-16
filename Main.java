@@ -50,6 +50,7 @@ public class Main {
                     running = false;
                     break;
                 case 5:
+                    System.out.println("Goodbye!");
                     running = false;
                     break;
             }
