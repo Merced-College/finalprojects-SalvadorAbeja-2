@@ -15,7 +15,7 @@ public class Menu{
                 fileScanner.nextLine();
             }
 
-            while (fileScanner .hasNextLine()){
+            while (fileScanner.hasNextLine()){
                 String line = fileScanner.nextLine();
                 if (line.trim().isEmpty()) continue;
 
