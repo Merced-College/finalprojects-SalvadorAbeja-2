@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.io.File;
 import java.util.Scanner;
 
+// Menu holds a collection of MenuItem objects and provides methods to load,
+// sort, search, and display menu entries for the ordering system.
 public class Menu{
     private ArrayList<MenuItem> items = new ArrayList<>();
 

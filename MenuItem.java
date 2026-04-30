@@ -1,3 +1,4 @@
+// MenuItem represents a single menu entry with an ID, name, category, and price.
 public class MenuItem {
     private int id;
     private String name;
