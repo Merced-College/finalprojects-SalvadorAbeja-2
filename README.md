@@ -5,7 +5,7 @@ Upload your final project to this github repo.
 
 Make a README file for your project and put the infor about your project in it - your name, date and what your program does.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The project is called "_______ Restuarant Ordering System"
+The project is called "Merced College Restuarant Ordering System"
 
 This program is designed to list off the menu from the restaurant and provides a few ways to organize the menu, either by price, by name, or by the ID number that is correlated to each menu item. These will make it easier for the users to find the items that they want to order more efficiently.
 

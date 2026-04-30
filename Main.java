@@ -11,7 +11,7 @@ public class Main {
         
         boolean running = true;
         while (running) {
-            System.out.println("\n--- Restaurant Ordering System ---");
+            System.out.println("\n--- Merced College Restaurant Ordering System ---");
             System.out.println("1. View Full Menu (By Price)");
             System.out.println("2. Add Item by Item ID (Search)");
             System.out.println("3. Add Item by Name (Linear Search)");
