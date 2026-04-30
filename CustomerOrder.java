@@ -1,6 +1,6 @@
 public class CustomerOrder{
     private OrderCart cart;
-    private final double TAX_RATE = 0.0875; //8.75% is the Sales Tax in Merced
+    private final double TAX_RATE = 0.0825; //8.25% is the Sales Tax in Merced
 
     public CustomerOrder(OrderCart cart){
         this.cart = cart;
