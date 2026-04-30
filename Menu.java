@@ -6,11 +6,12 @@ public class Menu{
     private ArrayList<MenuItem> items = new ArrayList<>();
 
     public void loadFromCSV(String filename){
+        // Read the menu file and create MenuItem objects for each row
         try {
             File file = new File(filename);
             Scanner fileScanner = new Scanner(file);
 
-            //Skips header row "menu_item_id,item_name,category,price"
+            // Skips header row "menu_item_id,item_name,category,price"
             if (fileScanner.hasNextLine()){
                 fileScanner.nextLine();
             }
@@ -37,7 +38,9 @@ public class Menu{
         }
     }
 
-    //Insertion Sort (By price)
+    // Insertion Sort (By price)
+    // This algorithm organizes the menu from cheapest to most expensive.
+    // It is efficient for small lists and demonstrates sorting behavior clearly.
     public void sortByPrice(){
         for (int i = 1; i < items.size(); i++){
             MenuItem key = items.get(i);
@@ -61,9 +64,10 @@ public class Menu{
         }
     }
 
-    //Binary Search (By ID)
+    // Binary Search (By ID)
+    // This method first sorts the list by ID, then searches quickly by halving the search range.
     public MenuItem findById(int targetId){
-        sortByID(); //This ensures list is sorted for binary search
+        sortByID(); // This ensures list is sorted for binary search
         int low = 0;
         int high = items.size() - 1;
         while (low <= high) {
@@ -75,7 +79,9 @@ public class Menu{
         return null;
     }
 
-    //Linear Search (By Name)
+    // Linear Search (By Name)
+    // This method scans each item until it finds a name match.
+    // It is straightforward and works even when the list is not sorted.
     public MenuItem findByName(String targetName){
         for (MenuItem item : items){
             if(item.getName().equalsIgnoreCase(targetName.trim())){
